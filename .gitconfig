@@ -1,0 +1,5 @@
+[user]
+	name = Joon Sunn Foo
+	email = joonsunn.foo@gmail.com
+[core]
+	editor = code --wait
