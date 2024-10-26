@@ -1,11 +1,11 @@
 {
-    "editor.guides.bracketPairs": true,
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.printWidth": 120,
-    "scm.compactFolders": false,
-    "editor.wordWrapColumn": 120,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.tabCompletion": "on"
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 120,
+  "explorer.compactFolders": false,
+  "editor.wordWrapColumn": 120,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.tabCompletion": "on"
 }
