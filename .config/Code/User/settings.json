@@ -7,5 +7,6 @@
   "explorer.compactFolders": false,
   "editor.wordWrapColumn": 120,
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.tabCompletion": "on"
+  "editor.tabCompletion": "on",
+  "terminal.integrated.fontFamily": "'MesloLGM Nerd Font', 'monospace', monospace"
 }
