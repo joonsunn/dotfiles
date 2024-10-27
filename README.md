@@ -15,9 +15,16 @@
    ./helper_scripts/run_first.sh
    ```
 
+   `run_first.sh` installs the following applications:
+
+   - git
+   - stow
+   - zsh
+   - oh-my-posh (curl-ing script from oh-my-posh repo)
+
 3. Install all other apps. In this case:
 
-   * `code` (VS Code)
+   - `code` (VS Code)
 
 4. initialise Stow
 
