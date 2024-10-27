@@ -8,7 +8,7 @@
    git clone git@github.com:joonsunn/dotfiles.git
    ```
 
-2. Navigate to `~/dotfiles/helper_scripts`, then run:
+2. Navigate to `~/dotfiles`, then run:
 
    ```bash
    chmod +x ./helper_scripts/run_first.sh
