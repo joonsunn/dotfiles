@@ -15,21 +15,23 @@
    ./helper_scripts/run_first.sh
    ```
 
-3. initialise Stow
+3. Install all other apps. In this case:
+
+   *`code` (VS Code)
+
+4. initialise Stow
 
    ```bash
    cd ~/dotfiles
    stow .
    ```
 
-4. If conflict occurs, then run
+5. If conflict occurs, then run
 
    ```bash
    stow . --adopt
    git reset --hard
    ```
-
-5. Proceed to install other apps, such as `vscode` and etc.
 
 ##
 
