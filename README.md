@@ -11,8 +11,8 @@
 2. Navigate to `~/dotfiles`, then run:
 
    ```bash
-   chmod +x ./.helper_scripts/run_first.sh
-   ./.helper_scripts/run_first.sh
+   chmod +x ./helper_scripts/run_first.sh
+   ./helper_scripts/run_first.sh
    ```
 
    `run_first.sh` installs the following applications:
