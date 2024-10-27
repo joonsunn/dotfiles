@@ -5,7 +5,7 @@
 1. Clone this repo to home directory
 
    ```bash
-   git clone git@github.com:joonsunn/dotfiles.git
+   git clone https://github.com/joonsunn/dotfiles.git
    ```
 
 2. Navigate to `~/dotfiles`, then run:
