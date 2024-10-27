@@ -11,8 +11,8 @@
 2. Navigate to `~/dotfiles`, then run:
 
    ```bash
-   chmod +x ./helper_scripts/run_first.sh
-   ./helper_scripts/run_first.sh
+   chmod +x ./.helper_scripts/run_first.sh
+   ./.helper_scripts/run_first.sh
    ```
 
    `run_first.sh` installs the following applications:
@@ -30,17 +30,19 @@
 
    ```bash
    cd ~/dotfiles
-   stow .
+   stow -vSt ~ */
    ```
 
 5. If conflict occurs, then run
 
    ```bash
-   stow . --adopt
+   stow --adopt -vSt ~ */
    git reset --hard
    ```
 
-##
+info:
+
+- <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-single-files-in-main-directory>
 
 ## Stowed application settings
 
