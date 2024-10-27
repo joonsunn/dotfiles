@@ -17,7 +17,7 @@
 
 3. Install all other apps. In this case:
 
-   *`code` (VS Code)
+   * `code` (VS Code)
 
 4. initialise Stow
 
