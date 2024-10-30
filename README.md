@@ -24,7 +24,7 @@
 
 3. Install all other apps. In this case:
 
-   - `code` (VS Code)
+   - `code` (VS Code) (as well as `install_vscode_extensions.sh` inside `helper_scripts` folder)
 
 4. initialise Stow
 
@@ -50,3 +50,20 @@ info:
 2. `zsh`
 3. `bash`
 4. `code` (VS Code)
+
+## VS COde folder shenanigans
+
+When running stow with `--adopt` flag **after** instaling VS Code, the `vscode` folder inside `dotfiles` will be populated with all the other files aside from `settings.json`. To fix, run:
+
+```bash
+   stow --adopt -vDt ~ */
+```
+
+Then delete the vscode folder inside `dotfiles`. Then run
+
+```bash
+   git reset --hard
+   stow -vSt ~ */
+```
+
+Maybe can `stow` first, then only start installing apps, then `git reset --hard` once everything is installed.
