@@ -1,4 +1,4 @@
-eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/craver.omp.json)"
+# eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/craver.omp.json)"
 source ~/dotfiles/helper_scripts/zsh-completions/zsh-completions.plugin.zsh
 source ~/dotfiles/helper_scripts/fzf-tab/fzf-tab.plugin.zsh
 source ~/dotfiles/helper_scripts/fzf-tab/fzf-tab.zsh
@@ -44,6 +44,6 @@ zstyle ':vcs_info:git:*' formats '%b '
 setopt PROMPT_SUBST
 # for SSH sessions where oh-my-posh is not available
 NEWLINE=$'\n'
-PROMPT='%(?.%F{green}✓.%F{red}✗)%f %F{green}%*%f %B%F{blue}%n%f@%F{white}%m%f%b %F{yellow}%~%f %F{red}${vcs_info_msg_0_}%f%# ${NEWLINE}%F{black}❯%f '
+PROMPT='%(?.%F{green}✓.%F{red}✗)%f %F{green}%*%f %B%F{blue}%n%f@%F{white}%m%f%b %F{yellow}%~%f %F{red}${vcs_info_msg_0_}%f%# ${NEWLINE}%F{white}⯈%f '
 RPROMPT='%F{8}⏱  %*%f'
 
