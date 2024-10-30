@@ -14,5 +14,6 @@ git clone https://github.com/Aloxaf/fzf-tab
 wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.5.2.zip
 unzip xrdp-installer-1.5.2.zip 
 chmod +x ./xrdp-installer-1.5.2.sh
+./xrdp-installer-1.5.2.sh -s -u
 
-./fzf/install
+./fzf/install --all
