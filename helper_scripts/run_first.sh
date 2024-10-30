@@ -11,5 +11,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions.git
 git clone https://github.com/junegunn/fzf.git
 git clone https://github.com/Aloxaf/fzf-tab
+wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.5.2.zip
+unzip xrdp-installer-1.5.2.zip 
+chmod +x ./xrdp-installer-1.5.2.sh
 
 ./fzf/install
