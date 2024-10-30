@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y git stow zsh
+sudo apt install -y git stow zsh openssh-server
 chsh -s $(which zsh)
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
