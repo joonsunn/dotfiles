@@ -3,7 +3,7 @@
 sudo apt update
 sudo apt install -y git stow zsh openssh-server
 chsh -s $(which zsh)
-export PATH:$PATH:~/.local/bin
+export PATH:$PATH:$HOME/.local/bin
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
 oh-my-posh font install meslo
