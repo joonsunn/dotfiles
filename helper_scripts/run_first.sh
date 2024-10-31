@@ -3,9 +3,10 @@
 sudo apt update
 sudo apt install -y git stow zsh openssh-server
 chsh -s $(which zsh)
-export PATH:$PATH:$HOME/.local/bin
+
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
+export PATH:$PATH:$HOME/.local/bin
 oh-my-posh font install meslo
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
