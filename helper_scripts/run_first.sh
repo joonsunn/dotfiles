@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y git stow zsh openssh-server
+sudo apt install -y git stow zsh openssh-server command-not-found
 chsh -s $(which zsh)
 
 

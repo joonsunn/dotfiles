@@ -11,6 +11,7 @@ source ~/dotfiles/helper_scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.
 source ~/dotfiles/helper_scripts/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /etc/zsh_command_not_found
 
 # Load completions
 autoload -Uz compinit && compinit
