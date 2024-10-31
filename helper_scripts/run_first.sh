@@ -6,7 +6,7 @@ chsh -s $(which zsh)
 
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
-export PATH:$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 oh-my-posh font install meslo
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
