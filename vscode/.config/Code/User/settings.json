@@ -1,15 +1,23 @@
 {
   "editor.guides.bracketPairs": true,
+  "editor.matchBrackets": "always",
+  "editor.bracketPairColorization.enabled": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairsHorizontal": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabCompletion": "on",
+  "editor.wordWrapColumn": 120,
+  "editor.linkedEditing": true,
   "prettier.printWidth": 120,
   "explorer.compactFolders": false,
-  "editor.wordWrapColumn": 120,
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.tabCompletion": "on",
   "terminal.integrated.fontFamily": "'MesloLGM Nerd Font', 'monospace', monospace",
   "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro Monokai Darker"
+  "workbench.colorTheme": "One Dark Pro Monokai Darker",
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "javascript.preferences.renameMatchingJsxTags": true
 }
