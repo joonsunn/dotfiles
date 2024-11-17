@@ -8,23 +8,25 @@
    git clone https://github.com/joonsunn/dotfiles.git
    ```
 
-2. Navigate to `~/dotfiles`, then run:
+2. Navigate to `~/dotfiles/helper_scripts`, then run:
 
    ```bash
-   chmod +x ./helper_scripts/run_first.sh
-   ./helper_scripts/run_first.sh
+   chmod +x ./run_first.sh
+   ./run_first.sh
    ```
 
    `run_first.sh` installs the following applications:
 
    - git
+   - openssh-server
    - stow
    - zsh
+   - tmux
    - oh-my-posh (curl-ing script from oh-my-posh repo)
 
 3. Install all other apps. In this case:
 
-   - `code` (VS Code) (as well as `install_vscode_extensions.sh` inside `helper_scripts` folder)
+   - `code` (VS Code) (using `install_vs_code.sh` as well as `install_vscode_extensions.sh` inside `helper_scripts` folder)
 
 4. initialise Stow
 
@@ -50,6 +52,7 @@ info:
 2. `zsh`
 3. `bash`
 4. `code` (VS Code)
+5. `tmux`
 
 ## VS COde folder shenanigans
 

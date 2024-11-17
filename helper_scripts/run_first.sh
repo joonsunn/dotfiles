@@ -2,7 +2,7 @@
 
 cd ~/dotfiles/helper_scripts
 sudo apt update
-sudo apt install -y git stow zsh openssh-server command-not-found
+sudo apt install -y git stow zsh openssh-server command-not-found tmux
 chsh -s $(which zsh)
 
 
