@@ -53,6 +53,7 @@ NEWLINE=$'\n'
 PROMPT='%(?.%F{green}✓.%F{red}✗)%f %F{green}%*%f %B%F{blue}%n%f@%F{white}%m%f%b %F{yellow}%~%f %F{red}${vcs_info_msg_0_}%f%# ${NEWLINE}%F{white}⯈%f '
 RPROMPT='%F{8}⏱  %*%f'
 
+export FZF_TMUX=1
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
