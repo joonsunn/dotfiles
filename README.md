@@ -54,7 +54,7 @@ info:
 4. `code` (VS Code)
 5. `tmux`
 
-## VS COde folder shenanigans
+## VS Code folder shenanigans
 
 When running stow with `--adopt` flag **after** instaling VS Code, the `vscode` folder inside `dotfiles` will be populated with all the other files aside from `settings.json`. To fix, run:
 
