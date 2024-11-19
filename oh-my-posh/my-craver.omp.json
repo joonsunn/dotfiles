@@ -24,7 +24,7 @@
           "background": "#242424",
           "foreground": "#FFBB00",
           "style": "plain",
-          "template": "{{ if .SSHSession }} \ueba9 [SSH] {{ end }} <b>{{.UserName}}@{{.HostName}}</b>",
+          "template": "{{ if .SSHSession }} \ueba9 [SSH]{{ end }} <b>{{.UserName}}@{{.HostName}}</b>",
           "type": "session"
         },
         {
