@@ -24,15 +24,8 @@
           "background": "#242424",
           "foreground": "#FFBB00",
           "style": "plain",
-          "template": "{{ if .SSHSession }} \ueba9 [SSH] {{ end }}<b>{{.UserName}}@{{.HostName}}</b>",
+          "template": "{{ if .SSHSession }} \ueba9 [SSH] {{ end }} <b>{{.UserName}}@{{.HostName}}</b>",
           "type": "session"
-        },
-        {
-          "background": "#242424",
-          "foreground": "#cccccc",
-          "style": "plain",
-          "template": " \uf489 {{.Name}}",
-          "type": "shell"
         },
         {
           "background": "#242424",
@@ -115,6 +108,13 @@
           "style": "plain",
           "template": "<p:white> · </>{{.CurrentDate | date .Format}}",
           "type": "time"
+        },
+        {
+          "background": "#242424",
+          "foreground": "#cccccc",
+          "style": "plain",
+          "template": " \uf489 {{.Name}}",
+          "type": "shell"
         }
       ]
     },
