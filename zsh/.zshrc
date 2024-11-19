@@ -1,7 +1,8 @@
 export PATH=$PATH:$HOME/.local/bin
 
 if command -v oh-my-posh > /dev/null; then
-    eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/craver.omp.json)"
+    # eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/craver.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh/my-craver.omp.json)"
 fi
 
 source ~/dotfiles/helper_scripts/zsh-completions/zsh-completions.plugin.zsh
