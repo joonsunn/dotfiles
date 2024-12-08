@@ -70,3 +70,5 @@ Then delete the vscode folder inside `dotfiles`. Then run
 ```
 
 Maybe can `stow` first, then only start installing apps, then `git reset --hard` once everything is installed.
+
+<!-- test same-name -->
