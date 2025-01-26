@@ -22,5 +22,15 @@
   "javascript.preferences.renameMatchingJsxTags": true,
   "tailwindCSS.experimental.configFile": {
     "tailwind.config.js": "**"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "codeium.enableCodeLens": false,
+  "files.associations": {
+    ".dev.vars*": "properties",
+    ".env*": "properties",
+    "*.json": "jsonc"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
