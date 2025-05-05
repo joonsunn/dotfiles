@@ -20,7 +20,13 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
   "javascript.preferences.renameMatchingJsxTags": true,
-  "tailwindCSS.experimental.configFile": {
-    "tailwind.config.js": "**"
+  "tailwindCSS.experimental.configFile": "./src/index.css",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
