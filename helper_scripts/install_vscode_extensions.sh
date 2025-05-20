@@ -12,6 +12,7 @@ code --install-extension eserozvataf.one-dark-pro-monokai-darker
 code --install-extension formulahendry.auto-close-tag
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension gruntfuggly.todo-tree
+code --install-extension joshbolduc.commitlint
 code --install-extension mhutchie.git-graph
 code --install-extension naumovs.color-highlight
 code --install-extension pkief.material-icon-theme
