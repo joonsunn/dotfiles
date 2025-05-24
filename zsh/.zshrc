@@ -60,6 +60,7 @@ alias k='kill_port'
 # Aliases
 alias ls='ls --color -lah'
 alias supdate='sudo apt update && sudo apt dist-upgrade -y'
+alias wezterm-here='wezterm cli spawn --new-window --cwd .'
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
