@@ -42,9 +42,9 @@
    git reset --hard
    ```
 
-info:
+6. Make a copy of `secrets.zsh.example`, rename it to `secrets.zsh`, and populate it with the relevant secrets/API keys. Run `exec zsh` to apply changes.
 
-- <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-single-files-in-main-directory>
+info: <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-single-files-in-main-directory>
 
 ## Stowed application settings
 
@@ -52,7 +52,9 @@ info:
 2. `zsh`
 3. `bash`
 4. `code` (VS Code)
-5. `tmux`
+5. `tmux` (to be installed separately, either linux-brew or from script)
+6. `wezterm`
+7. `oh-my-posh`
 
 ## VS Code folder shenanigans
 

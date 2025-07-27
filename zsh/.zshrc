@@ -13,6 +13,7 @@ source ~/dotfiles/helper_scripts/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /etc/zsh_command_not_found
+source ~/dotfiles/zsh/secrets.zsh
 
 # Load completions
 autoload -Uz compinit && compinit

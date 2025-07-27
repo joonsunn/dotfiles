@@ -1,2 +1,3 @@
 helper_scripts/*/
 xrdp*
+secrets.zsh
