@@ -8,7 +8,7 @@ code --install-extension donjayamanne.githistory
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
-code --install-extension eserozvataf.one-dark-pro-monokai-darker
+code --install-extension mxthevs.one-dark-pro-monokai-darker-reloaded
 code --install-extension formulahendry.auto-close-tag
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension gruntfuggly.todo-tree
