@@ -14,6 +14,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.fontFamily": "'MesloLGM Nerd Font', 'monospace', monospace",
   "workbench.sideBar.location": "right",
+  "workbench.editor.showTabIndex": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "One Dark Pro Monokai Darker",
   "[prisma]": {
