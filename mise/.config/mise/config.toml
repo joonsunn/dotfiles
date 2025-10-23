@@ -1,0 +1,4 @@
+[tools]
+gemini = "latest"
+node = "24"
+pnpm = "latest"

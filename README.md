@@ -72,3 +72,7 @@ Then delete the vscode folder inside `dotfiles`. Then run
 ```
 
 Maybe can `stow` first, then only start installing apps, then `git reset --hard` once everything is installed.
+
+## Adding new apps to stow
+
+Create a folder for the app, then replicate the folder structure **within** that folder to emulate the home directory. Then at the root of this repo, run `stow [app folder name]`, or `stow --adopt [app folder name]`

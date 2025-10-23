@@ -63,7 +63,7 @@ alias k='kill_port'
 # Aliases
 alias ls='ls --color -lah'
 alias supdate='sudo apt update && sudo apt dist-upgrade -y'
-alias wezterm-here='wezterm cli spawn --new-window --cwd .'
+alias wezterm-here='wezterm start --cwd .'
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -81,14 +81,4 @@ RPROMPT='%F{8}⏱  %*%f'
 
 export FZF_TMUX=1
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-export PNPM_HOME="/home/foo/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+eval "$(/home/foo/.local/bin/mise activate zsh)"

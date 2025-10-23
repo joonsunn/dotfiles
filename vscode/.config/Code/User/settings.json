@@ -16,7 +16,7 @@
   "workbench.sideBar.location": "right",
   "workbench.editor.showTabIndex": true,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "One Dark Pro Monokai Darker",
+  "workbench.colorTheme": "One Dark Pro Monokai Darker Reloaded",
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
@@ -57,5 +57,10 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "codeium.enableCodeLens": false,
+  "biome.suggestInstallingGlobally": false,
+  "[css]": {
+    "editor.suggest.insertMode": "replace"
+  }
 }
