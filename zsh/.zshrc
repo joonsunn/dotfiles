@@ -81,4 +81,4 @@ RPROMPT='%F{8}⏱  %*%f'
 
 export FZF_TMUX=1
 
-eval "$(/home/foo/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"

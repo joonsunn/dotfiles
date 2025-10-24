@@ -1,4 +1,7 @@
 [tools]
 gemini = "latest"
-node = "24"
+node = "latest"
 pnpm = "latest"
+lazydocker = "latest"
+lazygit = "latest"
+"npm:pm2" = "latest"
