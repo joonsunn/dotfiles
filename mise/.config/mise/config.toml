@@ -1,7 +1,11 @@
 [tools]
-gemini = "latest"
-node = "latest"
+gemini-cli = "latest"
+node = "24"
 pnpm = "latest"
 lazydocker = "latest"
 lazygit = "latest"
 "npm:pm2" = "latest"
+# opencode = "1.0.43"
+# tmux = "latest"
+# deno = "latest"
+# bun = "latest"

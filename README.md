@@ -55,6 +55,7 @@ info: <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-s
 5. `tmux` (to be installed separately, either linux-brew or from script)
 6. `wezterm`
 7. `oh-my-posh`
+8. `mise`
 
 ## VS Code folder shenanigans
 
