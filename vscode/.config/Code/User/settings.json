@@ -53,7 +53,7 @@
     ]
   },
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "typescript"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
@@ -62,5 +62,9 @@
   "biome.suggestInstallingGlobally": false,
   "[css]": {
     "editor.suggest.insertMode": "replace"
-  }
+  },
+  "github.copilot.enable": {
+    "*": false
+  },
+  "terminal.integrated.stickyScroll.enabled": false
 }
