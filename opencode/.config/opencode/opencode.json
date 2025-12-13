@@ -3,5 +3,8 @@
   "tui": {
     "scroll_speed": 3
   },
+  // "model": "openai/gpt-oss-120b:free",
+  "model": "tngtech/deepseek-r1t2-chimera:free",
+  // "model": "kwaipilot/kat-coder-pro:free",
   "small_model": "google/gemini-2.5-flash"
 }

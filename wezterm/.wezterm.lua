@@ -10,6 +10,26 @@ local config = wezterm.config_builder()
 config.color_scheme = 'Monokai (terminal.sexy)'
 config.font = wezterm.font("MesloLGM Nerd Font", {weight="Regular", stretch="Normal", style="Normal"})
 
+local act = wezterm.action
+
+config.keys = {
+  { key = 'UpArrow', mods = 'SHIFT', action = act.ScrollByLine(-1) },
+  { key = 'DownArrow', mods = 'SHIFT', action = act.ScrollByLine(1) },
+}
+
+config.mouse_bindings = {
+  {
+    event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+    mods = 'NONE',
+    action = act.ScrollByLine(-1)
+  },
+  {
+    event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+    mods = 'NONE',
+    action = act.ScrollByLine(1) 
+  },
+}
+
 
 -- and finally, return the configuration to wezterm
 return config
