@@ -1,7 +1,6 @@
 #!/bin/bash
 code --install-extension alefragnani.bookmarks
 code --install-extension bradlc.vscode-tailwindcss
-code --install-extension codeium.codeium
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension donjayamanne.githistory
@@ -9,8 +8,6 @@ code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
 code --install-extension mxthevs.one-dark-pro-monokai-darker-reloaded
-code --install-extension formulahendry.auto-close-tag
-code --install-extension formulahendry.auto-rename-tag
 code --install-extension gruntfuggly.todo-tree
 code --install-extension joshbolduc.commitlint
 code --install-extension mhutchie.git-graph
@@ -23,3 +20,5 @@ code --install-extension walnuts1018.oklch-vscode
 code --install-extension wix.vscode-import-cost
 code --install-extension yoavbls.pretty-ts-errors
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension tamasfe.even-better-toml
