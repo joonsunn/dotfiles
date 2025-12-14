@@ -1,10 +1,6 @@
 #!/bin/bash
 
 cd ~/dotfiles/helper_scripts
-sudo apt update
-sudo apt install -y git stow zsh openssh-server command-not-found tmux curl fcitx5 fcitx5-chinese-addons xournalpp
-chsh -s $(which zsh)
-
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
 export PATH=$PATH:$HOME/.local/bin
