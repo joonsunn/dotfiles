@@ -1,6 +1,7 @@
 # model = "openai/gpt-oss-120b:free"
 # model = "tngtech/deepseek-r1t2-chimera:free"
-model = "kwaipilot/kat-coder-pro:free"
+# model = "kwaipilot/kat-coder-pro:free"
+model = "mistralai/devstral-2512:free"
 model_provider = "openrouter"
 
 [model_providers.openrouter]
