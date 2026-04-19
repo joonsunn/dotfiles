@@ -9,6 +9,7 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'Monokai (terminal.sexy)'
 config.font = wezterm.font("MesloLGM Nerd Font", {weight="Regular", stretch="Normal", style="Normal"})
+config.font_size = 20.0
 
 local act = wezterm.action
 

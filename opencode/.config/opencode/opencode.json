@@ -1,13 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "tui": {
-    "scroll_speed": 3
-  },
-  // "model": "openai/gpt-oss-120b:free",
-  // "model": "tngtech/deepseek-r1t2-chimera:free",
-  // "model": "mistralai/devstral-2512:free",
-  "model": "nvidia/nemotron-3-nano-30b-a3b:free",
-  // "model": "kwaipilot/kat-coder-pro:free",
-  // "small_model": "google/gemini-2.5-flash",
-  "small_model": "google/gemma-3-27b-it:free"
+  "plugin": ["opencode-lmstudio@latest"],
+  "model": "opencode/minimax-m2.5-free",
+  "small_model": "opencode/big-pickle"
 }

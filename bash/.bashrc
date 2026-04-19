@@ -118,3 +118,8 @@ fi
 
 eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/craver.omp.json)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/foo/.lmstudio/bin"
+# End of LM Studio CLI section
+

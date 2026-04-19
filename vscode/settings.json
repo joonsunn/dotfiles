@@ -8,6 +8,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabCompletion": "on",
   "editor.wordWrapColumn": 120,
+  "editor.fontSize": 12,
+  "window.zoomLevel": 1,
   "editor.linkedEditing": true,
   "prettier.printWidth": 120,
   "explorer.compactFolders": false,
@@ -20,17 +22,16 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "javascript.preferences.renameMatchingJsxTags": true,
+  "js/ts.preferences.renameMatchingJsxTags": true,
   "tailwindCSS.experimental.configFile": {
     "apps/vite-tw/src/index.css": "apps/vite-tw/src/**",
     "src/app/globals.css": "src/app/**",
     "src/index.css": "**"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -58,13 +59,68 @@
     "source.fixAll.eslint": "always"
   },
   "eslint.useFlatConfig": true,
-  "codeium.enableCodeLens": false,
-  "biome.suggestInstallingGlobally": false,
   "[css]": {
     "editor.suggest.insertMode": "replace"
   },
   "github.copilot.enable": {
     "*": false
   },
-  "terminal.integrated.stickyScroll.enabled": false
+  "terminal.integrated.stickyScroll.enabled": false,
+  "git.path": "/usr/bin/git",
+  "oaicopilot.baseUrl": "http://localhost:1234/v1",
+  "oaicopilot.models": [
+    {
+      "name": "openai/gpt-oss-20b",
+      "owned_by": "lmstudio",
+      "id": "openai/gpt-oss-20b",
+      "requiresAPIKey": false,
+      "url": "http://localhost:1234/v1",
+      "toolCalling": true,
+      "vision": true,
+      "maxInputTokens": 131072,
+      "maxOutputTokens": 131072,
+      "reasoning": {
+        "effort": "medium",
+        "enabled": true
+      }
+    },
+    {
+      "name": "uqwen3.6-35b-a3b-rotorquant-mlx",
+      "owned_by": "lmstudio",
+      "id": "qwen3.6-35b-a3b-rotorquant-mlx",
+      "requiresAPIKey": false,
+      "url": "http://localhost:1234/v1",
+      "toolCalling": true,
+      "vision": true,
+      "context_length": 100000,
+      "maxInputTokens": 100000,
+      "maxOutputTokens": 100000,
+      "reasoning": {
+        "effort": "medium",
+        "enabled": true
+      }
+    }
+  ],
+  "json.schemaDownload.trustedDomains": {
+    "https://app.kilo.ai/config.json": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://models.dev": true,
+    "https://opencode.ai": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
+  "go.lintOnSave": "file",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools"
+  }
 }

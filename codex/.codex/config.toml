@@ -1,13 +1,19 @@
-# model = "openai/gpt-oss-120b:free"
-# model = "tngtech/deepseek-r1t2-chimera:free"
-# model = "kwaipilot/kat-coder-pro:free"
-# model = "mistralai/devstral-2512:free"
-model = "nvidia/nemotron-3-nano-30b-a3b:free"
-model_provider = "openrouter"
+# model = "openai/gpt-oss-20b:free"
+# model_provider = "openrouter"
 
-[model_providers.openrouter]
-name = "OpenRouter"
-base_url = "https://openrouter.ai/api/v1"
+# [model_providers.openrouter]
+# name = "OpenRouter"
+# base_url = "https://openrouter.ai/api/v1"
+# env_key = "OPENROUTER_API_KEY"
+# # wire_api = "responses"
+# query_params = {}
+
+model = "qwen3.6-35b-a3b-rotorquant-mlx"
+model_provider = "oss"
+
+[model_providers.oss]
+name = "LMStudio"
+base_url = "http://localhost:1234/v1"
 env_key = "OPENROUTER_API_KEY"
-wire_api = "chat"
+# wire_api = "responses"
 query_params = {}

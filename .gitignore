@@ -1,3 +1,9 @@
 helper_scripts/*/
 xrdp*
 secrets.zsh
+/codex/.codex/*
+!/**/*/config.toml
+
+*migration*
+package*.json
+tui.json

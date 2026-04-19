@@ -16,7 +16,6 @@
    ```
 
    `run_first.sh` installs the following applications:
-
    - git
    - openssh-server
    - stow
@@ -25,24 +24,29 @@
    - oh-my-posh (curl-ing script from oh-my-posh repo)
 
 3. Install all other apps. In this case:
-
    - `code` (VS Code) (using `install_vs_code.sh` as well as `install_vscode_extensions.sh` inside `helper_scripts` folder)
 
 4. initialise Stow
 
    ```bash
    cd ~/dotfiles
-   stow -vSt ~ */
+   stow -vSt ~ */ --ignore vscode
    ```
 
-5. If conflict occurs, then run
+5. Then stow VS Code settings separately:
 
    ```bash
-   stow --adopt -vSt ~ */
+   stow -t ~/Library/Application\ Support/Code/User -vSt vscode
+   ```
+
+6. If conflict occurs, then run
+
+   ```bash
+   stow --adopt -vSt ~ */ --ignore vscode
    git reset --hard
    ```
 
-6. Make a copy of `secrets.zsh.example`, rename it to `secrets.zsh`, and populate it with the relevant secrets/API keys. Run `exec zsh` to apply changes.
+7. Make a copy of `secrets.zsh.example`, rename it to `secrets.zsh`, and populate it with the relevant secrets/API keys. Run `exec zsh` to apply changes.
 
 info: <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-single-files-in-main-directory>
 
@@ -59,21 +63,29 @@ info: <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-s
 
 ## VS Code folder shenanigans
 
-When running stow with `--adopt` flag **after** instaling VS Code, the `vscode` folder inside `dotfiles` will be populated with all the other files aside from `settings.json`. To fix, run:
+VS Code settings are excluded from global stow (using `--ignore vscode`) since VS Code stores settings in platform-specific locations. Use the `-t` flag to specify the correct target:
 
-```bash
-   stow --adopt -vDt ~ */
-```
+- **MacOS:** `~/Library/Application Support/Code/User`
+- **Linux:** `~/.config/Code/User`
 
-Then delete the vscode folder inside `dotfiles`. Then run
-
-```bash
-   git reset --hard
-   stow -vSt ~ */
-```
-
-Maybe can `stow` first, then only start installing apps, then `git reset --hard` once everything is installed.
+See [Cross-platform settings](#cross-platform-settings) for the correct commands.
 
 ## Adding new apps to stow
 
 Create a folder for the app, then replicate the folder structure **within** that folder to emulate the home directory. Then at the root of this repo, run `stow [app folder name]`, or `stow --adopt [app folder name]`
+
+## Cross-platform settings
+
+### VS Code
+
+VS Code stores its settings in platform-specific directories. Use stow's `-t` flag to specify the correct target:
+
+**On MacOS:**
+```bash
+stow -t ~/Library/Application\ Support/Code/User -vSt vscode
+```
+
+**On Linux:**
+```bash
+stow -t ~/.config/Code/User -vSt vscode
+```
