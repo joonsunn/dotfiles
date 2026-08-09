@@ -28,21 +28,38 @@
 
 4. initialise Stow
 
+   Either do one by one:
+
    ```bash
-   cd ~/dotfiles
-   stow -vSt ~ */ --ignore vscode
+      stow --verbose --stow git
+      stow mise # alternative command
+      ...
    ```
 
-5. Then stow VS Code settings separately:
+   or use the `*/` glob pattern to expand:
 
    ```bash
-   stow -t ~/Library/Application\ Support/Code/User -vSt vscode
+      > echo */
+      bash/ codex/ git/ ......
+   ```
+
+   so can do all one shot (stow all except vscode and tmux):
+
+   ```bash
+   cd ~/dotfiles
+   stow --verbose --stow --target="$HOME" ^(vscode|tmux)/
+   ```
+
+5. Then stow VS Code settings separately (for macos):
+
+   ```bash
+   stow --verbose --target="$HOME/Library/Application\ Support/Code/User" --stow vscode
    ```
 
 6. If conflict occurs, then run
 
    ```bash
-   stow --adopt -vSt ~ */ --ignore vscode
+   stow --adopt --verbose --target="$HOME" ^(vscode|tmux)/
    git reset --hard
    ```
 
@@ -78,14 +95,30 @@ Create a folder for the app, then replicate the folder structure **within** that
 
 ### VS Code
 
-VS Code stores its settings in platform-specific directories. Use stow's `-t` flag to specify the correct target:
+VS Code stores its settings in platform-specific directories. Use stow's `-t` or `--target` flag to specify the correct target:
 
 **On MacOS:**
+
 ```bash
-stow -t ~/Library/Application\ Support/Code/User -vSt vscode
+stow --verbose --target="$HOME/Library/Application\ Support/Code/User" --stow vscode
 ```
 
 **On Linux:**
+
 ```bash
-stow -t ~/.config/Code/User -vSt vscode
+stow --verbose --target="$HOME/.config/Code/User" --stow vscode
 ```
+
+## Quick tips
+
+`stow <app-name>` creates the symlink. Quick and dirty way of re-doing the stow is to manually delete any erroneously created symlinks at the non-`dotfiles` directory, then do `stow ...`.
+
+Official way to undo stow (delete symlink created by `stow`): `stow --delete <app-name>`.
+Can also add `alias=stow --delete` to `.zshrc`.
+
+Manual symlink:
+
+   ```bash
+   cd "$(dirname <where-the-link-will-be>)"
+   ln -s <path-from-here-to-source> <link-name>
+   ```

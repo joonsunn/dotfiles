@@ -248,7 +248,10 @@ keybinds clear-defaults=true {
 // changing these requires a restart to take effect
 plugins {
     about location="zellij:about"
-    compact-bar location="zellij:compact-bar"
+    // compact-bar location="zellij:compact-bar"
+    compact-bar location="https://github.com/ivoronin/zellij-tab-bar-indexed/releases/latest/download/compact-bar.wasm" {
+        show_tab_indices true
+    }
     configuration location="zellij:configuration"
     filepicker location="zellij:strider" {
         cwd "/"

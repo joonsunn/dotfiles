@@ -1,18 +1,17 @@
 export PATH=$PATH:$HOME/.local/bin
-
-if command -v oh-my-posh > /dev/null; then
-    # eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/craver.omp.json)"
-    eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh/my-craver.omp.json)"
-fi
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 source ~/dotfiles/helper_scripts/zsh-completions/zsh-completions.plugin.zsh
 source ~/dotfiles/helper_scripts/fzf-tab/fzf-tab.plugin.zsh
-source ~/dotfiles/helper_scripts/fzf-tab/fzf-tab.zsh
+# source ~/dotfiles/helper_scripts/fzf-tab/fzf-tab.zsh
 source ~/dotfiles/helper_scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source ~/dotfiles/helper_scripts/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/dotfiles/helper_scripts/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /etc/zsh_command_not_found
+# source ~/dotfiles/helper_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /etc/zsh_command_not_found
 source ~/dotfiles/zsh/secrets.zsh
 
 # Load completions
@@ -64,21 +63,62 @@ alias k='kill_port'
 alias ls='ls --color -lah'
 alias supdate='sudo apt update && sudo apt dist-upgrade -y'
 alias wezterm-here='wezterm start --cwd .'
+alias sqlite='sqlite3'
+alias unstow="stow --delete"
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
-precmd() { vcs_info }
+
+# watch_prompt() {
+#     if [[ "$PROMPT" != "$LAST_PROMPT" || "$RPROMPT" != "$LAST_RPROMPT" ]]; then
+#         print -P "%F{red}PROMPT CHANGED%f"
+#         LAST_PROMPT=$PROMPT
+#         LAST_RPROMPT=$RPROMPT
+#     fi
+# }
+
+# add-zsh-hook precmd watch_prompt
+add-zsh-hook precmd vcs_info
 
 zstyle ':vcs_info:git:*' formats '%b '
 
-setopt PROMPT_SUBST
-# for SSH sessions where oh-my-posh is not available
-NEWLINE=$'\n'
-PROMPT='%(?.%F{green}✓.%F{red}✗)%f %F{green}%*%f %B%F{blue}%n%f@%F{white}%m%f%b %F{yellow}%~%f %F{red}${vcs_info_msg_0_}%f%# ${NEWLINE}%F{white}⯈%f '
-RPROMPT='%F{8}⏱  %*%f'
-
 export FZF_TMUX=1
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/foo/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/Users/foo/.gem/ruby/3.4.0/bin:$PATH"
+
+alias kube-homelab="export KUBECONFIG=~/.kube/clusters/k3s-homelab.yaml"
+alias kube-default="export KUBECONFIG=~/.kube/config"
+alias kube-local="unset KUBECONFIG"
+
+# default logging configs for opentofu
+export TF_LOG=DEBUG
+export TF_LOG_PATH=./opentofu.log
+
+# for postgres install using mise
+export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib $LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include $CPPFLAGS"
+
+# reconfigure global git config folder
+export XDG_CONFIG_HOME="$HOME/.config"
+
 eval "$($HOME/.local/bin/mise activate zsh)"
+
+setopt PROMPT_SUBST
+
+if command -v oh-my-posh >/dev/null; then
+    eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/oh-my-posh/my-craver.omp.json")"
+else
+    # for SSH sessions where oh-my-posh is not available    
+    NEWLINE=$'\n'
+    PROMPT='%(?.%F{green}✓.%F{red}✗)%f %F{green}%*%f %B%F{blue}%n%f@%F{white}%m%f%b %F{yellow}%~%f %F{red}${vcs_info_msg_0_}%f%# ${NEWLINE}%F{white}⯈%f '
+    RPROMPT='%F{8}⏱  %*%f'
+fi

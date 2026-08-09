@@ -5,7 +5,7 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.guides.bracketPairsHorizontal": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabCompletion": "on",
   "editor.wordWrapColumn": 120,
   "editor.fontSize": 12,
@@ -20,50 +20,112 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "One Dark Pro Monokai Darker Reloaded",
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
+    "editor.defaultFormatter": "Prisma.prisma",
   },
   "js/ts.preferences.renameMatchingJsxTags": true,
   "tailwindCSS.experimental.configFile": {
     "apps/vite-tw/src/index.css": "apps/vite-tw/src/**",
     "src/app/globals.css": "src/app/**",
-    "src/index.css": "**"
+    "src/index.css": "**",
   },
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "commitlint.config.extend.rules": {
-    "body-leading-blank": [1, "always"],
-    "body-max-line-length": [2, "always", 100],
-    "footer-leading-blank": [1, "always"],
-    "footer-max-line-length": [2, "always", 100],
-    "header-max-length": [2, "always", 100],
-    "scope-case": [2, "always", "lower-case"],
-    "subject-case": [2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]],
-    "subject-empty": [2, "never"],
-    "subject-full-stop": [2, "never", "."],
-    "type-case": [2, "always", "lower-case"],
-    "type-empty": [2, "never"],
+    "body-leading-blank": [
+      1,
+      "always"
+    ],
+    "body-max-line-length": [
+      2,
+      "always",
+      100
+    ],
+    "footer-leading-blank": [
+      1,
+      "always"
+    ],
+    "footer-max-line-length": [
+      2,
+      "always",
+      100
+    ],
+    "header-max-length": [
+      2,
+      "always",
+      100
+    ],
+    "scope-case": [
+      2,
+      "always",
+      "lower-case"
+    ],
+    "subject-case": [
+      2,
+      "never",
+      [
+        "sentence-case",
+        "start-case",
+        "pascal-case",
+        "upper-case"
+      ]
+    ],
+    "subject-empty": [
+      2,
+      "never"
+    ],
+    "subject-full-stop": [
+      2,
+      "never",
+      "."
+    ],
+    "type-case": [
+      2,
+      "always",
+      "lower-case"
+    ],
+    "type-empty": [
+      2,
+      "never"
+    ],
     "type-enum": [
       2,
       "always",
-      ["feat", "fix", "docs", "perf", "refactor", "build", "ci", "revert", "style", "test", "chore"]
-    ]
+      [
+        "feat",
+        "fix",
+        "docs",
+        "perf",
+        "refactor",
+        "build",
+        "ci",
+        "revert",
+        "style",
+        "test",
+        "chore"
+      ],
+    ],
   },
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
+    "source.fixAll.eslint": "always",
   },
   "eslint.useFlatConfig": true,
   "[css]": {
-    "editor.suggest.insertMode": "replace"
+    "editor.suggest.insertMode": "replace",
   },
   "github.copilot.enable": {
-    "*": false
+    "*": false,
   },
   "terminal.integrated.stickyScroll.enabled": false,
   "git.path": "/usr/bin/git",
@@ -81,8 +143,8 @@
       "maxOutputTokens": 131072,
       "reasoning": {
         "effort": "medium",
-        "enabled": true
-      }
+        "enabled": true,
+      },
     },
     {
       "name": "uqwen3.6-35b-a3b-rotorquant-mlx",
@@ -97,13 +159,14 @@
       "maxOutputTokens": 100000,
       "reasoning": {
         "effort": "medium",
-        "enabled": true
-      }
-    }
+        "enabled": true,
+      },
+    },
   ],
   "json.schemaDownload.trustedDomains": {
     "https://app.kilo.ai/config.json": true,
     "https://developer.microsoft.com/json-schemas/": true,
+    "https://docs.renovatebot.com": true,
     "https://json-schema.org/": true,
     "https://json.schemastore.org/": true,
     "https://models.dev": true,
@@ -116,11 +179,60 @@
   },
   "go.lintOnSave": "file",
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast"],
+  "go.lintFlags": [
+    "--fast"
+  ],
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
   },
   "[sql]": {
-    "editor.defaultFormatter": "mtxr.sqltools"
-  }
+    "editor.defaultFormatter": "mtxr.sqltools",
+  },
+  "terminal.integrated.commandsToSkipShell": [
+    "kilo-code.new.agentManagerOpen",
+    "kilo-code.new.agentManager.showTerminal",
+    "kilo-code.new.agentManager.runScript",
+  ],
+  "workbench.editor.useModal": "off",
+  "extensions.autoUpdate": "off",
+  "extensions.allowOpenInModalEditor": false,
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "yaml.format.bracketSpacing": false,
+  "git.enableSmartCommit": false,
+  "todo-tree.ripgrep.ripgrep": "/Users/foo/.local/share/mise/installs/ripgrep/15.1.0/ripgrep-15.1.0-aarch64-apple-darwin/rg",
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  "chat.viewSessions.orientation": "stacked",
+  "diffEditor.renderSideBySide": false,
+  "files.associations": {
+    "config": "properties",
+    "ignore": "properties",
+  },
+  "kilo-code.new.agentWorkStyle": "skipped",
+  "kilo-code.new.autocomplete.enableAutoTrigger": false,
+  "editor.renderWhitespace": "all",
+  "git.confirmSync": false,
+  "[jsonc]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "*.json",
+        "*.jsonc"
+      ],
+      // "schema": {
+      //   "allowTrailingCommas": true
+      // }
+    }
+  ],
+  "chat.byokUtilityModelDefault": "mainAgent",
+  "chat.agent.sandbox.enabled": "off"
 }

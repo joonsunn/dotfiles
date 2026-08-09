@@ -1,0 +1,16 @@
+[user]
+	name = Joon Sunn Foo
+	email = joonsunn.foo@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
+[core]
+	editor = code --wait
+	sshCommand = "ssh -i ~/.ssh/id_ed25519"
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+
+# Work repositories
+# [includeIf "gitdir:~/work/"]
+#     path = ~/.config/git/work/gitconfig-work # create the appropriate folder structure, or adjust the path
+#     path = ./work/gitconfig-work # or use relative path (TEST BEFORE PROCEED FURTHER)
