@@ -134,17 +134,7 @@ Proceed directly when:
 * the affected scope is understood
 * no consequential architectural decision is required
 
-Escalate when:
-
-* architecture is unclear
-* substantial discovery is required
-* multiple consequential approaches exist
-* existing patterns appear insufficient
-* the change crosses important boundaries
-* an important decision is not established
-
-Do not compensate for uncertainty by performing increasingly extensive
-implementation or exploration.
-
-Escalation is preferable when uncertainty concerns architecture rather than
+Escalate per the Implementer role's escalation criteria. Do not compensate for
+uncertainty by performing increasingly extensive implementation or exploration;
+escalation is preferable when uncertainty concerns architecture rather than
 implementation mechanics.

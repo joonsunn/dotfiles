@@ -4,7 +4,7 @@
 
 - Never commit raw secrets (e.g. `.env`) to version control.
 - Be concise and token-efficient in reasoning, responses, and any generated text.
-- Call the `unslop` skill for user-facing responses and any text generation output.
+- Invoke the `unslop` skill before any user-facing response or generated text; manual self-editing does not satisfy this. Where no skill mechanism exists, apply `skills/unslop/SKILL.md` directly. Binds every agent and subagent.
 - Update all relevant context files with information uncovered during the session.
 - If a discovery belongs in this global AGENTS.md rather than a task/repo-level file, request permission before editing it.
 

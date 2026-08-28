@@ -2,217 +2,62 @@
 
 ## Roles
 
-The agent system uses four conceptual roles:
+Four conceptual roles; definitions live in `agents/` and describe **responsibility and authority**, not model selection.
 
-- **Architect** — owns understanding, architectural decisions, decomposition, orchestration, and final integration decisions.
-- **Reviewer** — independently evaluates implementation correctness, architectural integrity, risks, and verification.
-- **Implementer** — executes well-defined implementation tasks within the established architecture.
-- **Explorer** — discovers and summarizes repository context without modifying the repository or making consequential architectural decisions.
+- **Architect** — owns understanding, architectural decisions, decomposition, orchestration, and final integration.
+- **Reviewer** — independently evaluates correctness, architectural integrity, risks, and verification.
+- **Implementer** — executes well-defined tasks within the established architecture.
+- **Explorer** — discovers and reports repository context without modifying the repo or making consequential design decisions.
 
-Role definitions are maintained in the `agents/` directory.
+## Authority Boundaries
 
-Roles describe **responsibility and authority**, not model selection.
-
-## Separation of Responsibilities
-
-The **Architect** owns consequential technical decisions.
-
-The **Implementer** executes decisions established by the Architect and should not independently redesign the architecture.
-
-The **Explorer** discovers and reports repository facts. It should not modify the repository or make consequential design decisions unless explicitly instructed.
-
-The **Reviewer** independently evaluates the resulting implementation. It should not treat the Implementer's report, tests, or stated assumptions as sufficient evidence by themselves.
+- The **Architect** owns consequential technical decisions.
+- The **Implementer** executes established decisions; it must not independently redesign the architecture.
+- The **Explorer** discovers and reports; it must not modify the repository or make consequential design decisions unless explicitly instructed.
+- The **Reviewer** evaluates independently; it must not treat the Implementer's report, tests, or stated assumptions as sufficient evidence.
 
 ## Delegation
 
-Use delegation when another role can perform a task more efficiently without requiring the architectural judgment owned by the controlling agent.
+Delegate when another role can act without the controlling agent's architectural judgment: repository exploration, tracing unfamiliar code, locating analogous implementations, routine implementation, test generation, mechanical refactoring, focused verification.
 
-Good candidates for delegation include:
+Retain directly: architectural decisions, ambiguous-requirement interpretation, significant tradeoffs, public-API or boundary changes, conflicting-approach resolution, final integration.
 
-- repository exploration
-- large-context discovery
-- tracing unfamiliar code
-- locating analogous implementations
-- routine implementation
-- test generation
-- mechanical refactoring
-- focused verification
+Before delegating, establish enough context and design that the task has a clear boundary. Delegation is not a substitute for architectural understanding.
 
-Retain directly:
+When delegating, provide: objective, relevant context, established approach, explicit constraints, expected deliverable, relevant files, and decisions the agent must not change. Delegated agents report: work performed, assumptions, deviations, verification, unresolved concerns. If the established approach is incompatible with the repository, surface it rather than silently replacing the architecture.
 
-- architectural decisions
-- interpretation of ambiguous requirements
-- significant technical tradeoffs
-- decisions affecting public APIs or system boundaries
-- resolution of conflicting implementation approaches
-- final integration decisions
+## Workflow
 
-Delegation is not a substitute for architectural understanding.
+For unfamiliar or complex work, prefer: Explore → Architect → Decompose → Implement → Review → Verify. Small, well-understood changes may go straight to implementation; complex or high-risk work warrants more exploration and review.
 
-Before delegating implementation, establish enough context and design that the delegated task has a clear boundary.
+Orchestration is iterative, not linear. A typical complex flow loops Architect ↔ Explorer ↔ Implementer ↔ Reviewer until substantive issues resolve or an architectural decision is required. The Architect reassesses the plan whenever new information invalidates an assumption; do not continue an obsolete plan merely because implementation started.
 
-## Delegation Instructions
-
-Delegated tasks should be sufficiently self-contained for the receiving agent to execute them without reconstructing decisions that have already been made.
-
-When delegating, provide:
-
-1. The objective.
-2. Relevant repository context.
-3. The established design or intended approach.
-4. Explicit constraints.
-5. The expected deliverable.
-6. Relevant files or areas when known.
-7. Decisions that the delegated agent must not change.
-
-Delegated agents should report:
-
-- work performed
-- assumptions made
-- deviations from the assignment
-- verification performed
-- unresolved concerns
-
-If a delegated agent discovers that the established approach is incompatible with the repository or requirements, it should surface the issue rather than silently replacing the architecture.
-
-## Exploration Before Implementation
-
-For unfamiliar or sufficiently complex work, prefer the following progression:
-
-1. **Explore** — establish relevant repository context.
-2. **Architect** — determine the appropriate approach.
-3. **Decompose** — define independently executable work.
-4. **Implement** — execute the defined work.
-5. **Review** — independently evaluate the resulting changes.
-6. **Verify** — establish that the completed work satisfies the objective.
-
-Not every task requires every stage.
-
-Small, well-understood changes may proceed directly to implementation.
-
-Complex, ambiguous, or high-risk changes should use more extensive exploration and review.
-
-## Review
-
-Substantial changes should receive independent review before completion.
-
-The Reviewer should inspect:
-
-- the actual changes
-- relevant surrounding code
-- architectural context
-- tests and verification
-- important failure and edge cases
-
-The Reviewer should not merely confirm that the implementation matches the Implementer's description.
-
-If substantive problems are identified:
-
-1. Return the relevant work to the Implementer for correction.
-2. Re-review the resulting changes.
-3. Repeat until substantive issues are resolved or an architectural decision is required.
-
-## Iteration
-
-Agent orchestration is iterative rather than strictly linear.
-
-A typical complex workflow is:
-
-    Architect
-        ↓
-    Explorer
-        ↓
-    Architect
-        ↓
-    Implementer
-        ↓
-    Reviewer
-        ↓
-    Implementer (if corrections required)
-        ↓
-    Reviewer
-        ↓
-    Architect / completion
-
-The Architect should reassess the plan whenever exploration or implementation produces information that invalidates an existing assumption.
-
-Do not continue executing an obsolete plan merely because implementation has already begun.
+Substantial changes should receive independent review: inspect the actual changes, surrounding code, architectural context, tests, and important edge and failure cases. If problems are found, return work to the Implementer and re-review; repeat until resolved or an architectural decision is needed.
 
 ## Skills
 
-Roles should use available skills when a relevant procedure exists.
+Roles use available skills for procedure. Skills are plain markdown under `skills/`, harness-independent content, not opencode-specific runtime objects; each harness must make the referenced `SKILL.md` available to the role agent. Reference skills by name and path.
 
-The primary role-to-skill relationships are:
+Role-to-skill mapping:
 
-- **Architect** → `architecture`
-- **Architect / Explorer** → `repository-exploration`
-- **Implementer** → `implementation`
-- **Reviewer** → `code-review`
+- Architect → `architecture`
+- Architect / Explorer → `repository-exploration`
+- Implementer → `implementation`
+- Reviewer → `code-review`
 
-Skills provide **procedures and techniques**.
-
-Roles provide **responsibility and authority**.
-
-A role may use additional skills when appropriate.
-
-Do not create a new role merely because a new specialized procedure is needed; prefer adding a skill when the responsibility remains within an existing role.
+Skills provide procedures; roles provide responsibility and authority. Prefer adding a skill over a new role when the responsibility already fits an existing role.
 
 ## Context Management
 
-Agents should minimize unnecessary context consumption.
+Minimize context consumption: search narrowly before widening, read relevant files not whole directories, use existing patterns as evidence, delegate broad discovery, summarize discovered context before passing it on, and do not rediscover context already established. Pass the minimum context a delegated task needs while preserving what correct execution requires.
 
-When investigating a repository:
+## Portability
 
-- search narrowly before expanding the search scope
-- read relevant files rather than entire directories
-- use existing repository patterns as evidence
-- delegate broad discovery when appropriate
-- summarize discovered context before passing it to another agent
-
-Do not repeatedly rediscover context that has already been established.
-
-When delegating, pass the minimum context necessary for the delegated task while preserving the information required for correct execution.
-
-## Model Independence
-
-Canonical role definitions must not specify a particular model or model provider.
-
-Model selection is a **harness-specific deployment concern**.
-
-Each harness should map roles to models using its native configuration mechanisms.
-
-The same role may therefore be executed by different models in different harnesses.
-
-Canonical agent definitions should remain independent of:
-
-- model provider
-- model name
-- model-specific capabilities
-- model-specific prompting syntax
-- harness-specific tool names
-- harness-specific delegation mechanisms
-- harness-specific configuration formats
-
-## Harness Independence
-
-Portable agent instructions should describe **what an agent should do**, not **how a particular harness performs it**.
-
-Harness-specific configuration may define:
-
-- role-to-model mappings
-- role-to-agent mappings
-- subagent invocation mechanisms
-- permissions
-- tool availability
-- context-management behavior
-- lifecycle hooks
-- model-specific options
-
-Do not introduce harness-specific mechanisms into canonical role definitions when a portable formulation is possible.
+Canonical definitions are harness-independent: describe what an agent should do, not how a specific harness performs it. They must not specify model or provider, model-specific capabilities or prompting syntax, harness-specific tool names, delegation mechanisms, or configuration formats. Model and role-to-agent selection are harness-specific deployment concerns; each harness maps roles via its native config and may define invocation, permissions, tools, and hooks.
 
 ## Authority Hierarchy
 
-When determining how to act, use the following conceptual hierarchy:
+When deciding how to act, precedence is:
 
 1. User requirements
 2. Global agent instructions
@@ -220,21 +65,8 @@ When determining how to act, use the following conceptual hierarchy:
 4. Role responsibilities and constraints
 5. Applicable skills
 6. Local implementation conventions
-7. Agent preference
-
-Agent preference must never override explicit requirements, established architectural decisions, or applicable higher-level instructions.
+7. Agent preference (never overrides higher levels)
 
 ## Completion
 
-An agent should not declare a task complete merely because its assigned operation finished.
-
-Before completion, establish that:
-
-- the requested objective has been addressed
-- the implementation conforms to the established architecture
-- relevant edge and failure cases have been considered
-- appropriate tests and verification have been performed
-- delegated work has been reviewed where appropriate
-- no known substantive issue remains unresolved
-
-When an unresolved issue requires an architectural decision, surface it explicitly rather than silently making the decision.
+Do not declare done merely because an assigned operation finished. Before completion, confirm: the objective is addressed; the result conforms to the established architecture; relevant edge and failure cases were considered; appropriate tests and verification ran; delegated work was reviewed where appropriate; and no known substantive issue remains. Surface any unresolved issue that needs an architectural decision rather than deciding it silently.

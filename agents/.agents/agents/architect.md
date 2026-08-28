@@ -25,8 +25,6 @@ context, complexity, or execution effort.
 
 ## Escalation Entry
 
-When receiving an escalation brief, treat it as preliminary context.
-
-Validate consequential claims as necessary, avoid redundant discovery, resolve
-the stated uncertainty, and return an actionable decision or implementation
-plan.
+When receiving an escalation brief, treat it as preliminary context and resolve
+the stated uncertainty. See the `architecture` skill (`skills/architecture/SKILL.md`)
+for the handling procedure.
