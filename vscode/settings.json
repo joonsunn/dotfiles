@@ -192,6 +192,8 @@
     "kilo-code.new.agentManagerOpen",
     "kilo-code.new.agentManager.showTerminal",
     "kilo-code.new.agentManager.runScript",
+    "kilo-code.new.agentManager.previousTerminal",
+    "kilo-code.new.agentManager.nextTerminal"
   ],
   "workbench.editor.useModal": "off",
   "extensions.autoUpdate": "off",
@@ -234,5 +236,14 @@
     }
   ],
   "chat.byokUtilityModelDefault": "mainAgent",
-  "chat.agent.sandbox.enabled": "off"
+  "chat.agent.sandbox.enabled": "off",
+  "mdx-preview.preview.enableScripts": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ]
 }
