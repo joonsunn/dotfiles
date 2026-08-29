@@ -129,8 +129,7 @@ Provide:
 
 ## Triage Gate
 
-Before substantial implementation, determine whether the task can be safely
-executed using established patterns and sufficiently understood context.
+Before substantial implementation, determine whether the task can be safely executed using established patterns and sufficiently understood context.
 
 Proceed directly when:
 
@@ -139,7 +138,4 @@ Proceed directly when:
 * the affected scope is understood
 * no consequential architectural decision is required
 
-Escalate per the Implementer role's escalation criteria. Do not compensate for
-uncertainty by performing increasingly extensive implementation or exploration;
-escalation is preferable when uncertainty concerns architecture rather than
-implementation mechanics.
+Escalate per the Implementer role's escalation criteria. Do not compensate for uncertainty by performing increasingly extensive implementation or exploration; escalation is preferable when uncertainty concerns architecture rather than implementation mechanics.

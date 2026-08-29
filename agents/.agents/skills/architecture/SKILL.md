@@ -171,14 +171,10 @@ Do not produce lengthy design documents for trivial changes.
 
 ## Escalation Context
 
-When architectural work originates from an escalation, begin with the
-provided escalation brief.
+When architectural work originates from an escalation, begin with the provided escalation brief.
 
-Validate consequential claims against the repository, but avoid repeating
-discovery unnecessarily.
+Validate consequential claims against the repository, but avoid repeating discovery unnecessarily.
 
-Focus investigation on resolving the specific architectural uncertainty that
-caused escalation.
+Focus investigation on resolving the specific architectural uncertainty that caused escalation.
 
-Return an actionable architectural decision and implementation decomposition
-to the requesting agent.
+Return an actionable architectural decision and implementation decomposition to the requesting agent.

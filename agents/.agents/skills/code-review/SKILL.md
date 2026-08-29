@@ -185,13 +185,11 @@ Do not request changes simply because an alternative implementation would be pre
 
 ## Independence
 
-Do not assume that an implementation is correct because it follows the
-Architect's design.
+Do not assume that an implementation is correct because it follows the Architect's design.
 
 Review both:
 
 1. whether the implementation correctly realizes the intended architecture
 2. whether the architectural approach itself creates a substantive problem
 
-If the latter is true, report it explicitly rather than limiting the review
-to implementation details.
+If the latter is true, report it explicitly rather than limiting the review to implementation details.
