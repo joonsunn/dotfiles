@@ -1,8 +1,6 @@
 ---
-id: ping-global
 name: ping-global
-description: To verify agents can parse the global .agents folder and related skills
-enabled: true
+description: Verify agents can parse the global .agents folder and related skills. Use to confirm skills and the global agent context are loaded.
 ---
 
 ## What I do

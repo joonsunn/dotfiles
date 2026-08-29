@@ -1,3 +1,8 @@
+---
+name: repository-exploration
+description: Explore a codebase to answer a specific question with repository evidence. Use when locating symbols, tracing data flow, finding patterns, or discovering how existing code works before making a change.
+---
+
 # Repository Exploration
 
 ## Procedure

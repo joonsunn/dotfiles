@@ -1,3 +1,8 @@
+---
+name: implementation
+description: Implement a well-defined change with the smallest coherent modification while preserving repository conventions. Use when given a concrete task with a clear approach and known target files.
+---
+
 # Implementation
 
 ## Purpose

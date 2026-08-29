@@ -1,3 +1,8 @@
+---
+name: code-review
+description: Systematically evaluate a change for correctness, regressions, security, architecture, and test adequacy. Use when reviewing a diff, pull request, or submitted implementation.
+---
+
 # Code Review
 
 ## Purpose

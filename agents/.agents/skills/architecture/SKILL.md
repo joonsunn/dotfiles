@@ -1,3 +1,8 @@
+---
+name: architecture
+description: Turn a software requirement into a disciplined, repository-fitting implementation approach. Use when introducing a feature, changing APIs or interfaces, modifying architectural boundaries, or decomposing complex implementation work.
+---
+
 # Architecture
 
 ## Purpose
