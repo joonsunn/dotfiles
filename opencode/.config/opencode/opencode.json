@@ -3,19 +3,20 @@
   // "plugin": [
   //   "opencode-lmstudio@latest"
   // ],
+  "small_model": "opencode/big-pickle",
   "default_agent": "implementer",
   "agent": {
     "architect": {
-      "model": "opencode/hy3-free"
+      "model": "opencode/mimo-v2.5-free"
     },
     "reviewer": {
-      "model": "opencode/hy3-free"
+      "model": "opencode/mimo-v2.5-free"
     },
     "implementer": {
-      "model": "opencode/hy3-free"
+      "model": "opencode/mimo-v2.5-free"
     },
     "explorer": {
-      "model": "opencode/hy3-free"
+      "model": "opencode/mimo-v2.5-free"
     }
   }
 }

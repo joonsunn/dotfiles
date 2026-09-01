@@ -32,3 +32,7 @@
 - When about to branch in a non-exempt repository, use a Git worktree instead of checking the branch out in the canonical checkout. Read `docs/GIT_WORKTREES.md` for the full convention (procedure, branch naming, cleanup, and example layout).
 - Use a worktree when a task is substantial enough to warrant its own branch. Calibration: "substantial" includes any change touching more than one file's logic, or any API/behavior change. Trivial edits (a one-line typo fix, an untracked scratch file, or anything you would not normally branch for) do not require a worktree.
 - The dotfiles repository is exempt and may be edited directly; edits to this global `AGENTS.md` follow the "request permission before editing" rule in Ground rules. Other exempt repositories are listed in `docs/GIT_WORKTREES.md`.
+
+## CSS layout patterns
+
+- Read `docs/CSS_LAYOUT_PATTERNS.md` for common CSS gotchas discovered across sessions (height transitions, inline element limitations, scroll-driven animation pitfalls).

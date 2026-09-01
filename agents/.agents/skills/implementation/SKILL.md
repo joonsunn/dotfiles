@@ -23,6 +23,8 @@ Before editing, establish:
 
 If the assignment leaves a consequential design decision unresolved, ask the delegating agent rather than silently choosing an architecture.
 
+A common pitfall: when adding a boolean field with a "default", clarify whether the default applies to the **schema** (the value filled in when the key is omitted) or to the **runtime behavior** (what happens when the key is absent). These diverge — `z.boolean().default(true)` makes omission equivalent to `true`, while `z.boolean().optional()` leaves omission as `undefined`. The distinction between "fail-open" (omitted = allow) and "fail-closed" (omitted = deny) is a design decision, not an implementation detail.
+
 ### 2. Inspect Before Editing
 
 Read:
