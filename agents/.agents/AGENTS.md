@@ -7,7 +7,18 @@
 - When editing this file or other repository docs, match the existing markdown style: one logical line per paragraph or list item. Do not hard-wrap prose at a fixed column width.
 - Invoke the `unslop` skill before any user-facing response or generated text; manual self-editing does not satisfy this. Where no skill mechanism exists, apply `skills/unslop/SKILL.md` directly. Binds every agent and subagent.
 - Update all relevant context files with information uncovered during the session.
-- If a discovery belongs in this global AGENTS.md rather than a task/repo-level file, request permission before editing it.
+- Always work in a git worktree, unless specifically instructed not to.
+  - You may make changes directly to the `~/.agents` folder `main` branch when performing session maintenance
+
+## General framework preferences
+
+- Scripting language order of preference:
+  1. TypeScript
+  2. Golang
+  3. JavaScript
+
+- `pnpm` for JS/TS package manager
+- `vite` for scaffolding frontend project
 
 ## Custom skills and agents
 
@@ -30,8 +41,6 @@
 ## Git worktrees
 
 - When about to branch in a non-exempt repository, use a Git worktree instead of checking the branch out in the canonical checkout. Read `docs/GIT_WORKTREES.md` for the full convention (procedure, branch naming, cleanup, and example layout).
-- Use a worktree when a task is substantial enough to warrant its own branch. Calibration: "substantial" includes any change touching more than one file's logic, or any API/behavior change. Trivial edits (a one-line typo fix, an untracked scratch file, or anything you would not normally branch for) do not require a worktree.
-- The dotfiles repository is exempt and may be edited directly; edits to this global `AGENTS.md` follow the "request permission before editing" rule in Ground rules. Other exempt repositories are listed in `docs/GIT_WORKTREES.md`.
 
 ## CSS layout patterns
 
