@@ -13,3 +13,7 @@ Elements with `display: inline` (e.g. `<a>`, `<span>`) do not respond to `height
 ## Scroll-driven margin conflicts with `position: sticky`
 
 Applying `marginTop` (or similar) based on scroll position consumes scroll distance and fights `position: sticky`. The page does not scroll until the animation completes, causing a "scroll delay" feel. Avoid this pattern; use CSS class toggles with transitions instead.
+
+## `position: sticky` stays in flex flow
+
+A sticky element remains a flex item of its container, so a top bar placed inside a row flex container stretches into a side column instead of spanning the top. Use `position: fixed` with content offset, or move the bar outside the flex container.
