@@ -4,23 +4,37 @@
   //   "opencode-lmstudio@latest"
   // ],
   "lsp": true,
+  "permission": {
+    "lsp": "allow"
+  },
   "small_model": "opencode/big-pickle",
   "default_agent": "implementer",
   "agent": {
+    "build": {
+      "disable": true
+    },
+    "plan": {
+      "disable": true
+    },
     "architect": {
-      "model": "opencode/muse-spark-1.3-contributor-free"
+      "model": "opencode/muse-spark-1.3-contributor-free",
+      "color": "#6B46C1",
     },
     "reviewer": {
-      "model": "opencode/muse-spark-1.3-contributor-free"
+      "model": "opencode/muse-spark-1.3-contributor-free",
+      "color": "#D97706"
     },
     "implementer": {
-      "model": "opencode/muse-spark-1.3-contributor-free"
+      "model": "opencode/muse-spark-1.3-contributor-free",
+      "color": "#0D9488"
     },
     "explorer": {
-      "model": "opencode/muse-spark-1.3-contributor-free"
+      "model": "opencode/muse-spark-1.3-contributor-free",
+      "color": "#2563EB"
     },
     "tester": {
-      "model": "opencode/muse-spark-1.3-contributor-free"
+      "model": "opencode/muse-spark-1.3-contributor-free",
+      "color": "#E11D48"
     }
   }
 }

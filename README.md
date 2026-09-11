@@ -28,7 +28,13 @@
 
 4. initialise Stow
 
-   Either do one by one:
+   First, install the stow global ignore first:
+
+   ```bash
+      stow stow
+   ```
+
+   Then, either do one by one:
 
    ```bash
       stow --verbose --stow git

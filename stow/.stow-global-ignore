@@ -1,0 +1,4 @@
+# stow uses perl regex instead of shell globbing
+^README\.md$
+^NOTES\.md$
+.*\.example$
