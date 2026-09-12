@@ -130,3 +130,5 @@ Manual symlink:
    cd "$(dirname <where-the-link-will-be>)"
    ln -s <path-from-here-to-source> <link-name>
    ```
+
+To fix a screwy app that writes to the config folder (e.g. codex), first run `unstow <stow-package>`, then re-run `stow.sh`.

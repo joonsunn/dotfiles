@@ -29,12 +29,12 @@
 
 ## Custom skills and agents
 
-`~/.agents` is the canonical home for custom skills, agents, and commands. It is symlinked into opencode's scanned paths, so anything created or edited there shows up in opencode. Concretely:
+`agents/.agents/` in the dotfiles repo is the source of truth all harnesses inherit from. Each harness package (e.g. `codex/.codex/`, `opencode/.config/opencode/`) holds relative symlinks back to it for `AGENTS.md`, `skills/`, `docs/`, and `agents/`, and `stow agents` plus `stow <harness>` links those into place on the machine (`~/.agents/`, `~/.codex/`, `~/.config/opencode/`, etc.). Concretely:
 
-- Put skills in `~/.agents/skills/<name>/SKILL.md`, not `~/.config/opencode/skills`.
-- Put agents and commands under `~/.agents` as well.
-- `~/.config/opencode/AGENTS.md` is itself a symlink to `~/.agents/AGENTS.md` (both resolve to the same file), so editing either path edits the same global agents file. Treat `~/.agents/AGENTS.md` as the source of truth.
-- Do not create skills or agents directly under `~/.config/opencode`; use `~/.agents` so the symlink keeps opencode's directory in sync.
+- Put skills in `agents/.agents/skills/<name>/SKILL.md`, not inside a harness package.
+- Put shared agents, docs, and commands under `agents/.agents/` as well.
+- To wire a new harness, replicate its expected config path in dotfiles, symlink each shared entry back to `agents/.agents/` with a relative link, then `stow` the package. See `agents/README.md` for the steps.
+- Do not create skills or agents directly inside a harness package; edit the source of truth so every harness inherits the change. Harness-local files (e.g. `opencode.json`, `config.toml`) stay in the harness package.
 
 ## Agent Orchestration
 

@@ -1,6 +1,19 @@
 # Personal Codex defaults. Project repos may add trusted `.codex/config.toml` overrides.
 # Model is intentionally omitted so subagents inherit the parent session model.
 # Sandbox is scoped per agent in `agents/*.toml`, not here.
+model_provider = "opencode-zen"
+model = "muse-spark-1.3-contributor-free"
+
+[model_providers.opencode-zen]
+name = "OpenCode Zen"
+base_url = "https://opencode.ai/zen/v1"
+env_key = "OPENCODE_ZEN_API_KEY"
+wire_api = "responses"
+
 [agents]
 max_threads = 6
 max_depth = 1
+
+[tui]
+theme = "monokai-extended-bright"
+
