@@ -77,8 +77,24 @@ run_stow() {
   fi
 }
 
+# True when the package target receives machine-local writes
+# (see NO_FOLD_PACKAGES in apps-to-stow.sh). Portable across bash and zsh.
+is_no_fold_pkg() {
+  local candidate
+  for candidate in ${NO_FOLD_PACKAGES[@]+"${NO_FOLD_PACKAGES[@]}"}; do
+    if [[ "$candidate" == "$1" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
 for pkg in "${APPS_TO_STOW[@]}"; do
-  run_stow --verbose "$MODE" --target="$HOME" "$pkg"
+  if is_no_fold_pkg "$pkg"; then
+    run_stow --verbose --no-folding "$MODE" --target="$HOME" "$pkg"
+  else
+    run_stow --verbose "$MODE" --target="$HOME" "$pkg"
+  fi
 done
 
 mkdir -p "$VSCODE_TARGET"

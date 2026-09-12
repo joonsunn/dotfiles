@@ -35,3 +35,23 @@ APPS_TO_STOW=(
   zellij
   zsh
 )
+
+# Packages whose target directories receive machine-local writes.
+# Stow folds a package into a single directory symlink when the target
+# does not exist yet, which would route those writes into this repo.
+# stow.sh passes --no-folding for these so the target stays a real
+# directory with file-level symlinks and app state lands beside them.
+#   claude   — sessions/, backups/
+#   codex    — auth.json, history.jsonl, logs, sessions
+#   copilot  — config.json, logs/, ide/
+#   kilo     — plugin node_modules, lockfiles
+#   opencode — plugin node_modules, lockfiles
+#   ssh      — keys, known_hosts (never fold; keys must not enter the repo)
+NO_FOLD_PACKAGES=(
+  claude
+  codex
+  copilot
+  kilo
+  opencode
+  ssh
+)
