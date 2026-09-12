@@ -1,7 +1,6 @@
 helper_scripts/*/
 xrdp*
 .zshenv
-/codex/.codex/*
 !/**/*/config.toml
 
 *migration*

@@ -1,1 +1,4 @@
-/*
+# Never stow this package; run the scripts directly instead.
+# Perl regex (not shell glob): no slash = match basename exactly, so .*
+# ignores every entry in this package.
+.*

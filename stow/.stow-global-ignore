@@ -1,4 +1,10 @@
-# stow uses perl regex instead of shell globbing
+# stow uses perl regex, one per line. No slash = match basename exactly,
+# with slash = match against /-prefixed path relative to package root.
+# Note: this file replaces stow's built-in ignore list, so VCS/editor
+# entries worth keeping are repeated here.
 ^README\.md$
 ^NOTES\.md$
 .*\.example$
+^node_modules$
+^\.git$
+^\.DS_Store$

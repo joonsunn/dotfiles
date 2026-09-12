@@ -28,6 +28,8 @@
 
 4. initialise Stow
 
+   _Update_: edit `apps-to-stow.sh` with the exact apps to stow, then run `stow.sh`. That will run everything from step 4 to step 6.
+
    First, install the stow global ignore first:
 
    ```bash
@@ -69,7 +71,7 @@
    git reset --hard
    ```
 
-7. Make a copy of `secrets.zsh.example`, rename it to `secrets.zsh`, and populate it with the relevant secrets/API keys. Run `exec zsh` to apply changes.
+7. Rename `.zshenv.example` to `.zshenv`, and populate it with the relevant secrets/API keys. Run `exec zsh` to apply changes.
 
 info: <https://stackoverflow.com/questions/64231650/why-doesnt-gnu-stow-ignore-single-files-in-main-directory>
 
