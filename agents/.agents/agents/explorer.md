@@ -1,3 +1,8 @@
+---
+description: Discover and report repository context without modifying code. Use for locating files, tracing flows, and establishing patterns before implementation.
+mode: subagent
+---
+
 # Explorer
 
 Discover and report repository context for another agent.

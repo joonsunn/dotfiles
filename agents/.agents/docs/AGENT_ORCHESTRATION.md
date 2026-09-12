@@ -2,12 +2,13 @@
 
 ## Roles
 
-Four conceptual roles; definitions live in `agents/` and describe **responsibility and authority**, not model selection.
+Five conceptual roles; definitions live in `agents/` and describe **responsibility and authority**, not model selection.
 
 - **Architect** — owns understanding, architectural decisions, decomposition, orchestration, and final integration.
 - **Reviewer** — independently evaluates correctness, architectural integrity, risks, and verification.
 - **Implementer** — executes well-defined tasks within the established architecture.
 - **Explorer** — discovers and reports repository context without modifying the repo or making consequential design decisions.
+- **Tester** — verifies behavior by exercising the running application like a user would, and reports reproducible findings.
 
 ## Authority Boundaries
 
@@ -15,6 +16,7 @@ Four conceptual roles; definitions live in `agents/` and describe **responsibili
 - The **Implementer** executes established decisions; it must not independently redesign the architecture.
 - The **Explorer** discovers and reports; it must not modify the repository or make consequential design decisions unless explicitly instructed.
 - The **Reviewer** evaluates independently; it must not treat the Implementer's report, tests, or stated assumptions as sufficient evidence.
+- The **Tester** verifies behavior by exercising the running application; it must not treat passing builds or HTTP 200s as sufficient evidence by themselves.
 
 ## Delegation
 
@@ -28,7 +30,7 @@ When delegating, provide: objective, relevant context, established approach, exp
 
 ## Workflow
 
-For unfamiliar or complex work, prefer: Explore → Architect → Decompose → Implement → Review → Verify. Small, well-understood changes may go straight to implementation; complex or high-risk work warrants more exploration and review.
+For unfamiliar or complex work, prefer: Explore → Architect → Decompose → Implement → Review → Test. Small, well-understood changes may go straight to implementation; complex or high-risk work warrants more exploration and review. The Tester owns the Test step.
 
 Orchestration is iterative, not linear. A typical complex flow loops Architect ↔ Explorer ↔ Implementer ↔ Reviewer until substantive issues resolve or an architectural decision is required. The Architect reassesses the plan whenever new information invalidates an assumption; do not continue an obsolete plan merely because implementation started.
 
@@ -44,6 +46,7 @@ Role-to-skill mapping:
 - Architect / Explorer → `repository-exploration`
 - Implementer → `implementation`
 - Reviewer → `code-review`
+- Tester → `headless-chrome`, `playwright`
 
 Skills provide procedures; roles provide responsibility and authority. Prefer adding a skill over a new role when the responsibility already fits an existing role.
 
@@ -53,7 +56,7 @@ Minimize context consumption: search narrowly before widening, read relevant fil
 
 ## Portability
 
-Canonical definitions are harness-independent: describe what an agent should do, not how a specific harness performs it. They must not specify model or provider, model-specific capabilities or prompting syntax, harness-specific tool names, delegation mechanisms, or configuration formats. Model and role-to-agent selection are harness-specific deployment concerns; each harness maps roles via its native config and may define invocation, permissions, tools, and hooks.
+Canonical definitions are harness-independent: describe what an agent should do, not how a specific harness performs it. They carry only the portable minimum (`description`, `mode`) and must not specify model or provider, model-specific capabilities or prompting syntax, harness-specific tool names, delegation mechanisms, or other configuration formats. Model and role-to-agent selection are harness-specific deployment concerns; each harness maps roles via its native config and may define invocation, permissions, tools, and hooks. Opencode maps models and colors via `opencode.json` and reads the canonical `agents/*.md` directly. Copilot uses `*.agent.md` adapters that reference the canonical files.
 
 ## Authority Hierarchy
 

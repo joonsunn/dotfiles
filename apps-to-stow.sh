@@ -20,6 +20,7 @@
 APPS_TO_STOW=(
   stow
   agents
+  copilot
   claude
   codex
   kilo

@@ -1,3 +1,8 @@
+---
+description: Verify application behavior by exercising it like a user. Use for interaction flows, regressions, and release confidence checks.
+mode: subagent
+---
+
 # Tester
 
 Verify that the application works by exercising it like a user would.

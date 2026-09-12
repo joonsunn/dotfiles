@@ -1,3 +1,8 @@
+---
+description: Own architectural decisions and orchestration for complex or ambiguous tasks. Use when design is unclear, tradeoffs matter, or multiple agents need coordination.
+mode: all
+---
+
 # Architect
 
 Own architectural decisions and orchestration for complex or ambiguous tasks.
