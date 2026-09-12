@@ -1,0 +1,6 @@
+# Personal Codex defaults. Project repos may add trusted `.codex/config.toml` overrides.
+# Model is intentionally omitted so subagents inherit the parent session model.
+# Sandbox is scoped per agent in `agents/*.toml`, not here.
+[agents]
+max_threads = 6
+max_depth = 1
