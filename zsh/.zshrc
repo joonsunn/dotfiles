@@ -58,6 +58,15 @@ kill_port() {
 
 alias k='kill_port'
 
+mkcd() {
+    if [ -z "$1" ]; then
+        echo "Usage: mkcd <directory>"
+        return 1
+    fi
+
+    mkdir -p -- "$1" && cd -- "$1"
+}
+
 # Aliases
 alias ls='ls --color -lah'
 alias supdate='sudo apt update && sudo apt dist-upgrade -y'

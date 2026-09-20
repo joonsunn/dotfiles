@@ -1,3 +1,4 @@
 export GEMINI_API_KEY=
 export OPENROUTER_API_KEY=
+export OPENCODE_API_KEY=
 export GH_TOKEN=
