@@ -30,4 +30,5 @@ Do not run it after every small edit. Reserve it for the end of a coherent chunk
 ## Notes
 
 - The skill is the trigger. When the user signals the work is complete, run it rather than waiting to be reminded.
+- Run this pass before sending a completion report, and fold the outcome into that report. A sent report never substitutes for the pass.
 - Keep the procedure light. The goal is a small, accurate context update, not a changelog.
