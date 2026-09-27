@@ -17,3 +17,8 @@ max_depth = 1
 [tui]
 theme = "monokai-extended-bright"
 
+[projects."/Users/foo/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/foo/repos/blog"]
+trust_level = "trusted"

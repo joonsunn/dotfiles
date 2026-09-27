@@ -4,9 +4,10 @@
 
 - Never commit raw secrets (e.g. `.env`) to version control.
 - Be concise and token-efficient in reasoning, responses, and any generated text.
+- When reporting information to me, be extremely concise and sacrifice grammar for concision. This overrides unslop voice shaping in chat; unslop bans still hold.
 - When editing this file or other repository docs, match the existing markdown style: one logical line per paragraph or list item. Do not hard-wrap prose at a fixed column width.
-- Invoke the `unslop` skill before user-facing responses with descriptive prose; terse status confirmations (Done, Fixed, a bare result) are exempt. Manual self-editing does not satisfy this. Where no skill mechanism exists, apply `skills/unslop/SKILL.md` directly. Binds every agent and subagent.
-- Update all relevant context files with information uncovered during the session.
+- Load the `unslop` skill at most once per session and reuse it; do not re-invoke per response. Chat uses concision with bans from memory and no repeat loads. Run the full pass only for persisted markdown for human perusal. Where no skill mechanism exists, apply `skills/unslop/SKILL.md` directly. Binds every agent and subagent.
+- Record only durable facts a future session needs in relevant context files via `skills/session-maintenance/SKILL.md`; prune entries that no longer hold to protect context budget.
 - Always work in a git worktree, unless specifically instructed not to.
   - You may make changes directly to the `~/.agents` folder `main` branch when performing session maintenance
 
@@ -48,7 +49,3 @@
 ## Git worktrees
 
 - When about to branch in a non-exempt repository, use a Git worktree instead of checking the branch out in the canonical checkout. Read `docs/GIT_WORKTREES.md` for the full convention (procedure, branch naming, cleanup, and example layout).
-
-## CSS layout patterns
-
-- Read `docs/CSS_LAYOUT_PATTERNS.md` for common CSS gotchas discovered across sessions (height transitions, inline element limitations, scroll-driven animation pitfalls).

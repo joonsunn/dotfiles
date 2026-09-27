@@ -17,7 +17,7 @@ Run this skill when a skill is added, renamed, or removed, or when an edit touch
 
 Write the `SKILL.md` with `name` and `description` frontmatter following the existing convention of singular concept nouns. Phrase the `description` as "Use when ..." trigger conditions, since that text is what makes the skill discoverable. Then wire these references, in order.
 
-1. Role-to-skill mapping in `agents/.agents/docs/AGENT_ORCHESTRATION.md`. Add the skill to each consuming role's row. Current mapping: architect to `architecture`, architect and explorer to `repository-exploration`, implementer to `implementation`, reviewer to `code-review`, tester to `headless-chrome` and `playwright`.
+1. Role-to-skill mapping in `agents/.agents/docs/AGENT_ORCHESTRATION.md`. Add the skill to each consuming role's row. Current mapping: architect to `architecture`, architect and explorer to `repository-exploration`, implementer to `implementation` and `frontend-design` (new UI only), reviewer to `code-review`, tester to `headless-chrome` and `playwright`.
 2. Consuming canonical roles in `agents/.agents/agents/<role>.md`. Name the skill in the role's Procedure section with its `skills/<name>/SKILL.md` path, mirroring how tester names both its skills.
 3. Copilot adapters in `copilot/.copilot/agents/<role>.agent.md` for each consuming role. Add a markdown skill link (`[skill](../skills/<skill>/SKILL.md)`) alongside the existing ones.
 4. Codex adapters in `codex/.codex/agents/<role>.toml` for each consuming role. Add the `~/.agents/skills/<skill>/SKILL.md` path to `developer_instructions`.

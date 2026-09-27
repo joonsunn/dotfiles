@@ -27,7 +27,7 @@ The Implementer is the default entry-point agent. Use it when:
 
 ## Procedure
 
-Use the `implementation` skill (`skills/implementation/SKILL.md`).
+Use the `implementation` skill (`skills/implementation/SKILL.md`). Use the `frontend-design` skill (`skills/frontend-design/SKILL.md`) only when building new UI or reshaping existing UI.
 
 ## Escalation
 

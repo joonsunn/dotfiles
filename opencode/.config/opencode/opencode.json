@@ -5,7 +5,16 @@
   // ],
   "lsp": true,
   "permission": {
-    "lsp": "allow"
+    "lsp": "allow",
+    "external_directory": {
+      "~/.agents/*": "allow",
+      "~/dotfiles/agents/*": "allow",
+      "~/repos/*": "allow",
+      "~/work/*": "allow",
+      "/tmp/opencode/*": "allow",
+      "/tmp/chrome-agent-profile/*": "allow",
+      "/tmp/chrome-agent.log": "allow",
+    },
   },
   "small_model": "opencode/big-pickle",
   "default_agent": "implementer",
@@ -35,6 +44,27 @@
     "tester": {
       "model": "opencode/muse-spark-1.3-contributor-free",
       "color": "#E11D48"
+    }
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222"
+      ],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
     }
   }
 }

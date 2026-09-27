@@ -44,7 +44,7 @@ Role-to-skill mapping:
 
 - Architect → `architecture`
 - Architect / Explorer → `repository-exploration`
-- Implementer → `implementation`
+- Implementer → `implementation`, `frontend-design` (new UI or reshaping only)
 - Reviewer → `code-review`
 - Tester → `headless-chrome`, `playwright`
 
@@ -52,7 +52,7 @@ Skills provide procedures; roles provide responsibility and authority. Prefer ad
 
 ## Context Management
 
-Minimize context consumption: search narrowly before widening, read relevant files not whole directories, use existing patterns as evidence, delegate broad discovery, summarize discovered context before passing it on, and do not rediscover context already established. Pass the minimum context a delegated task needs while preserving what correct execution requires.
+Minimize context consumption: grep narrowly before reading, read relevant files not whole directories, use existing patterns as evidence, delegate broad discovery to Explorer, summarize discovered context before passing it on, pass the minimum context a delegated task needs while preserving what correct execution requires, and do not rediscover context already established.
 
 ## Portability
 
